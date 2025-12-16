@@ -1,9 +1,6 @@
 # VisaShield-AI
 An enterprise-grade Agentic AI system for pre-adjudicating US Immigration petitions. Powered by Google Vertex AI (Gemini 1.5 Pro) for multimodal reasoning and Datadog for "Legal Observability," ensuring compliance, hallucination prevention, and secure PII handling.
 
-###**README.md**#🦅 VisaGuardian AI!([https://img.shields.io/badge/Datadog-Observability-purple](https://www.google.com/search?q=https://img.shields.io/badge/Datadog-Observability-purple))
-!([https://img.shields.io/badge/Hackathon-Submission-green](https://www.google.com/search?q=https://img.shields.io/badge/Hackathon-Submission-green))
-
 **Secure, Agentic Adjudication for the US Immigration Backlog.**
 
 VisaGuardian AI is a "Legal Co-Pilot" designed to assist immigration attorneys and officers in processing complex visa petitions (O-1, H-1B, EB-2 NIW). It addresses the 11.3 million case backlog by automating the review of evidence against the *USCIS Policy Manual* while using **Datadog** to guarantee legal defensibility and prevent hallucinations.
