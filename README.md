@@ -13,7 +13,7 @@ Applicant[User / Applicant]
 Lawyer
 end
 
-```
+```mermaid
 subgraph "Google Cloud Platform"
     API[API Gateway]
     Orchestrator[Agent Orchestrator (LangChain)]
@@ -50,9 +50,6 @@ VectorDB -.->|Retrieval Score| Trace
 Orchestrator -.->|Hallucination Check| Agent
 
 Agent -->|Alerts & Metrics| Lawyer
-
-```
-
 ```
 
 ## 🚀 Key Features
@@ -112,7 +109,6 @@ Start the backend API (FastAPI) with Datadog instrumentation:
 
 ```bash
 ddtrace-run uvicorn app.main:app --host 0.0.0.0 --port 8080
-
 ```
 
 ##📊 Dashboard ConfigurationWe have included a pre-built Datadog Dashboard JSON to visualize the "Immigration Command Center."
