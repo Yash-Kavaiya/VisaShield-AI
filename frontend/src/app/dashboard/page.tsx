@@ -42,20 +42,20 @@ export default function DashboardPage() {
     return (
         <MainLayout>
             {/* Hero Section */}
-            <div className="mb-8">
-                <h1 className="text-3xl font-heading text-[var(--primary-navy)] mb-1">
+            <div className="mb-10">
+                <h1 className="text-3xl font-heading text-[var(--primary-navy)] mb-2">
                     {getGreeting()}, {userName}
                 </h1>
-                <p className="text-gray-500">
+                <p className="text-gray-500 text-base">
                     {formatDate(today, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
                 </p>
-                <p className="text-sm text-[var(--secondary-blue)] mt-2">
+                <p className="text-sm text-[var(--secondary-blue)] mt-3">
                     You&apos;ve helped process <span className="font-semibold">{formatNumber(mockMetrics.totalCasesThisQuarter)}</span> cases this quarter
                 </p>
             </div>
 
             {/* Metric Cards Row */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
                 <MetricCard
                     title="Cases Processed Today"
                     value={mockMetrics.casesProcessedToday}
@@ -96,7 +96,7 @@ export default function DashboardPage() {
             </div>
 
             {/* Main Content Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 mb-8">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 mb-10">
                 {/* Active Cases Table */}
                 <div className="lg:col-span-3">
                     <Card>

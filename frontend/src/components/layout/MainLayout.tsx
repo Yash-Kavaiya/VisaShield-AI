@@ -32,17 +32,17 @@ export default function MainLayout({ children }: MainLayoutProps) {
             {/* Main Content */}
             <main
                 id="main-content"
-                className="pt-16 min-h-screen transition-all duration-300"
+                className="pt-20 min-h-screen transition-all duration-300"
                 style={{ paddingLeft: `${sidebarWidth}px` }}
             >
-                <div className="p-6 lg:p-8 max-w-[1440px] mx-auto pb-16">
+                <div className="px-6 py-8 lg:px-10 lg:py-10 max-w-[1440px] mx-auto pb-20">
                     {children}
                 </div>
             </main>
 
             {/* Government Footer Notice - Fixed at bottom */}
             <footer
-                className="fixed bottom-0 right-0 py-2 px-4 bg-[var(--gray-50)] border-t border-gray-200 text-xs text-gray-500 transition-all duration-300 z-30"
+                className="fixed bottom-0 right-0 py-3 px-6 bg-[var(--gray-50)] border-t border-gray-200 text-xs text-gray-500 transition-all duration-300 z-30"
                 style={{ left: `${sidebarWidth}px` }}
             >
                 <div className="flex items-center justify-between max-w-[1440px] mx-auto">
