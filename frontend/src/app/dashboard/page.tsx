@@ -286,10 +286,7 @@ export default function DashboardPage() {
                                 <XAxis
                                     dataKey="date"
                                     tick={{ fontSize: 12, fill: '#6B7280' }}
-                                    tickFormatter={(value) => {
-                                        const date = new Date(value);
-                                        return date.toLocaleDateString('en-US', { weekday: 'short' });
-                                    }}
+                                    tickFormatter={(value) => value}
                                 />
                                 <YAxis tick={{ fontSize: 12, fill: '#6B7280' }} />
                                 <Tooltip
@@ -304,25 +301,25 @@ export default function DashboardPage() {
                                 <Bar
                                     dataKey="approved"
                                     name="Approved"
-                                    fill={CHART_COLORS.approved}
+                                    fill={CHART_COLORS.success}
                                     radius={[4, 4, 0, 0]}
                                 />
                                 <Bar
                                     dataKey="denied"
                                     name="Denied"
-                                    fill={CHART_COLORS.denied}
+                                    fill={CHART_COLORS.error}
                                     radius={[4, 4, 0, 0]}
                                 />
                                 <Bar
                                     dataKey="pending"
                                     name="Pending"
-                                    fill={CHART_COLORS.pending}
+                                    fill={CHART_COLORS.info}
                                     radius={[4, 4, 0, 0]}
                                 />
                                 <Bar
                                     dataKey="rfe"
                                     name="RFE Issued"
-                                    fill={CHART_COLORS.rfe}
+                                    fill={CHART_COLORS.warning}
                                     radius={[4, 4, 0, 0]}
                                 />
                             </BarChart>

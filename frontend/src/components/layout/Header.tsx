@@ -14,7 +14,6 @@ import {
     Settings,
     LogOut,
 } from 'lucide-react';
-import { cn } from '@/lib/utils';
 
 interface HeaderProps {
     sidebarCollapsed?: boolean;
@@ -30,6 +29,8 @@ export default function Header({ sidebarCollapsed = false }: HeaderProps) {
     const [searchFocused, setSearchFocused] = useState(false);
     const [userMenuOpen, setUserMenuOpen] = useState(false);
     const [notificationCount] = useState(3);
+
+    const sidebarWidth = sidebarCollapsed ? 72 : 280;
 
     // Generate breadcrumbs from pathname
     const getBreadcrumbs = (): Breadcrumb[] => {
@@ -57,11 +58,11 @@ export default function Header({ sidebarCollapsed = false }: HeaderProps) {
 
     return (
         <header
-            className={cn(
-                'fixed top-0 right-0 z-30 h-16 bg-white border-b border-gray-200 transition-all duration-300',
-                sidebarCollapsed ? 'left-[72px]' : 'left-[280px]'
-            )}
-            style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.05)' }}
+            className="fixed top-0 right-0 z-30 h-16 bg-white border-b border-gray-200 transition-all duration-300"
+            style={{
+                left: `${sidebarWidth}px`,
+                boxShadow: '0 1px 3px rgba(0,0,0,0.05)'
+            }}
         >
             <div className="flex items-center justify-between h-full px-6">
                 {/* Left: Breadcrumb */}
@@ -90,12 +91,10 @@ export default function Header({ sidebarCollapsed = false }: HeaderProps) {
                 {/* Center: Search */}
                 <div className="flex-1 max-w-xl mx-8">
                     <div
-                        className={cn(
-                            'relative flex items-center rounded-lg border transition-all',
-                            searchFocused
+                        className={`relative flex items-center rounded-lg border transition-all ${searchFocused
                                 ? 'border-[var(--secondary-blue)] ring-2 ring-[var(--secondary-blue)]/20'
                                 : 'border-gray-200 hover:border-gray-300'
-                        )}
+                            }`}
                     >
                         <Search className="absolute left-3 w-4 h-4 text-gray-400" />
                         <input

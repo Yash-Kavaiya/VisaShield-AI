@@ -29,7 +29,7 @@ export interface Case {
 
 export type VisaType = 'H-1B' | 'O-1A' | 'O-1B' | 'EB-1A' | 'EB-1B' | 'EB-2' | 'EB-2 NIW' | 'L-1A' | 'L-1B';
 
-export type CaseStatus = 
+export type CaseStatus =
   | 'draft'
   | 'submitted'
   | 'processing'
@@ -86,11 +86,33 @@ export interface Document {
 
 export type DocumentType = 'pdf' | 'image' | 'form' | 'other';
 
-export type DocumentCategory = 
+export type DocumentCategory =
   | 'forms'
   | 'evidence'
   | 'correspondence'
-  | 'ai-reports';
+  | 'ai-reports'
+  | 'reference';
+
+export type OCRStatus = 'pending' | 'processing' | 'complete' | 'failed';
+export type AIIngestionStatus = 'not-analyzed' | 'processing' | 'ingested' | 'failed';
+
+export interface CaseDocument {
+  id: string;
+  name: string;
+  type: DocumentType;
+  category: DocumentCategory;
+  status: 'pending' | 'verified' | 'rejected' | 'missing';
+  ocrStatus: OCRStatus;
+  aiStatus: AIIngestionStatus;
+  caseId?: string;
+  caseNumber?: string;
+  uploadDate: string;
+  fileUrl?: string;
+  fileSize: number; // in bytes
+  uploadedBy: string;
+  isRedacted: boolean;
+  notes?: string;
+}
 
 export interface AIAnalysis {
   overallScore: number;
@@ -186,7 +208,7 @@ export interface ProcessingQueueItem {
   estimatedTime?: number;
 }
 
-export type ProcessingStage = 
+export type ProcessingStage =
   | 'form-validation'
   | 'evidence-review'
   | 'policy-matching'
@@ -251,4 +273,45 @@ export interface NavItem {
   href: string;
   children?: NavItem[];
   badge?: number;
+}
+
+// Compliance Types
+export type ComplianceStatus = 'compliant' | 'warning' | 'violation' | 'pending-review';
+export type AuditAction = 'view' | 'edit' | 'create' | 'delete' | 'export' | 'approve' | 'reject' | 'login' | 'logout';
+
+export interface AuditLogEntry {
+  id: string;
+  timestamp: string;
+  userId: string;
+  userName: string;
+  userRole: string;
+  action: AuditAction;
+  resource: string;
+  resourceId?: string;
+  caseNumber?: string;
+  ipAddress: string;
+  details?: string;
+  riskLevel: 'low' | 'medium' | 'high';
+}
+
+export interface PolicyMonitor {
+  id: string;
+  name: string;
+  description: string;
+  category: 'data-privacy' | 'access-control' | 'processing' | 'retention' | 'ai-governance';
+  status: ComplianceStatus;
+  lastCheck: string;
+  nextCheck: string;
+  violations: number;
+  totalChecks: number;
+}
+
+export interface ComplianceMetric {
+  id: string;
+  label: string;
+  value: number;
+  target: number;
+  unit: string;
+  trend: 'up' | 'down' | 'stable';
+  status: ComplianceStatus;
 }

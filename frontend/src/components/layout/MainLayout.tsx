@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import Sidebar from './Sidebar';
 import Header from './Header';
-import { cn } from '@/lib/utils';
 
 interface MainLayoutProps {
     children: React.ReactNode;
@@ -11,6 +10,8 @@ interface MainLayoutProps {
 
 export default function MainLayout({ children }: MainLayoutProps) {
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+
+    const sidebarWidth = sidebarCollapsed ? 72 : 280;
 
     return (
         <div className="min-h-screen bg-[var(--cream-white)]">
@@ -31,22 +32,18 @@ export default function MainLayout({ children }: MainLayoutProps) {
             {/* Main Content */}
             <main
                 id="main-content"
-                className={cn(
-                    'pt-16 min-h-screen transition-all duration-300',
-                    sidebarCollapsed ? 'pl-[72px]' : 'pl-[280px]'
-                )}
+                className="pt-16 min-h-screen transition-all duration-300"
+                style={{ paddingLeft: `${sidebarWidth}px` }}
             >
-                <div className="p-6 lg:p-8 max-w-[1440px] mx-auto">
+                <div className="p-6 lg:p-8 max-w-[1440px] mx-auto pb-16">
                     {children}
                 </div>
             </main>
 
-            {/* Government Footer Notice */}
+            {/* Government Footer Notice - Fixed at bottom */}
             <footer
-                className={cn(
-                    'fixed bottom-0 right-0 py-2 px-4 bg-[var(--gray-50)] border-t border-gray-200 text-xs text-gray-500 transition-all duration-300',
-                    sidebarCollapsed ? 'left-[72px]' : 'left-[280px]'
-                )}
+                className="fixed bottom-0 right-0 py-2 px-4 bg-[var(--gray-50)] border-t border-gray-200 text-xs text-gray-500 transition-all duration-300 z-30"
+                style={{ left: `${sidebarWidth}px` }}
             >
                 <div className="flex items-center justify-between max-w-[1440px] mx-auto">
                     <span>

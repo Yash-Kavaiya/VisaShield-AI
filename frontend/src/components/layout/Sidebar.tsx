@@ -21,6 +21,7 @@ import {
     LogOut,
     User,
     Shield,
+    MessageCircle,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { APP_NAME, APP_TAGLINE } from '@/lib/constants';
@@ -58,6 +59,12 @@ const navItems: NavItem[] = [
         label: 'AI Adjudicator',
         icon: Brain,
         href: '/adjudicator',
+    },
+    {
+        id: 'askvia',
+        label: 'Ask VIA',
+        icon: MessageCircle,
+        href: '/askvia',
     },
     {
         id: 'analytics',
@@ -112,9 +119,12 @@ export default function Sidebar({ collapsed = false, onToggle }: SidebarProps) {
         <aside
             className={cn(
                 'fixed left-0 top-0 z-40 h-screen transition-all duration-300',
-                collapsed ? 'w-[72px]' : 'w-[280px]'
+                // collapsed ? 'w-[72px]' : 'w-[280px]' // Moved to inline style for reliability
             )}
-            style={{ backgroundColor: 'var(--primary-navy)' }}
+            style={{
+                backgroundColor: 'var(--primary-navy)',
+                width: collapsed ? '72px' : '280px'
+            }}
         >
             <div className="flex h-full flex-col">
                 {/* Logo Section */}
