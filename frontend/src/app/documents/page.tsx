@@ -73,7 +73,7 @@ const FileIcon = ({ type }: { type: string }) => {
 
 // OCR Status Badge
 const OCRStatusBadge = ({ status }: { status: OCRStatus }) => {
-    const configs = {
+    const configs: Record<OCRStatus, { icon: React.ElementType; label: string; className: string; animate?: boolean }> = {
         pending: { icon: Clock, label: 'Pending', className: 'bg-gray-100 text-gray-600' },
         processing: { icon: Loader2, label: 'Processing', className: 'bg-blue-100 text-blue-700', animate: true },
         complete: { icon: CheckCircle2, label: 'Complete', className: 'bg-green-100 text-green-700' },
@@ -92,7 +92,7 @@ const OCRStatusBadge = ({ status }: { status: OCRStatus }) => {
 
 // AI Status Badge
 const AIStatusBadge = ({ status }: { status: AIIngestionStatus }) => {
-    const configs = {
+    const configs: Record<AIIngestionStatus, { icon: React.ElementType; label: string; className: string; animate?: boolean }> = {
         'not-analyzed': { icon: Clock, label: 'Not Analyzed', className: 'bg-gray-100 text-gray-600' },
         processing: { icon: Brain, label: 'Analyzing', className: 'bg-purple-100 text-purple-700', animate: true },
         ingested: { icon: CheckCircle2, label: 'In RAG', className: 'bg-emerald-100 text-emerald-700' },
@@ -202,12 +202,12 @@ export default function DocumentsPage() {
     return (
         <MainLayout>
             {/* Page Header */}
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
                 <div>
                     <h1 className="text-2xl font-heading text-[var(--primary-navy)]">
                         Document Center
                     </h1>
-                    <p className="text-gray-500 text-sm mt-1">
+                    <p className="text-gray-500 text-sm mt-2">
                         {mockDocuments.length} documents across all cases
                     </p>
                 </div>
@@ -233,7 +233,7 @@ export default function DocumentsPage() {
             </div>
 
             {/* Tabs */}
-            <div className="flex gap-1 p-1 bg-gray-100 rounded-xl mb-6 w-fit">
+            <div className="flex gap-1 p-1 bg-gray-100 rounded-xl mb-8 w-fit">
                 {TABS.map((tab) => {
                     const Icon = tab.icon;
                     const isActive = activeTab === tab.id;

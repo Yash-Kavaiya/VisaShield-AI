@@ -250,12 +250,12 @@ export default function CompliancePage() {
     return (
         <MainLayout>
             {/* Page Header */}
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
                 <div>
                     <h1 className="text-2xl font-heading text-[var(--primary-navy)]">
                         Compliance Center
                     </h1>
-                    <p className="text-gray-500 text-sm mt-1">
+                    <p className="text-gray-500 text-sm mt-2">
                         Monitor compliance, audit trails, and policy adherence
                     </p>
                 </div>
@@ -270,7 +270,7 @@ export default function CompliancePage() {
             </div>
 
             {/* Tabs */}
-            <div className="flex gap-1 p-1 bg-gray-100 rounded-xl mb-6 w-fit">
+            <div className="flex gap-1 p-1 bg-gray-100 rounded-xl mb-8 w-fit">
                 {TABS.map((tab) => {
                     const Icon = tab.icon;
                     const isActive = activeTab === tab.id;

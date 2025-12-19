@@ -85,12 +85,12 @@ export default function CasesPage() {
     return (
         <MainLayout>
             {/* Page Header */}
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
                 <div>
                     <h1 className="text-2xl font-heading text-[var(--primary-navy)]">
                         Case Management
                     </h1>
-                    <p className="text-gray-500 text-sm mt-1">
+                    <p className="text-gray-500 text-sm mt-2">
                         Manage and review all immigration petitions
                     </p>
                 </div>

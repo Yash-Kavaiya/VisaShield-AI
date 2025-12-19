@@ -199,10 +199,10 @@ export default function AskVIAPage() {
 
     return (
         <MainLayout>
-            <div className="flex flex-col h-[calc(100vh-var(--header-height)-3rem)]">
+            <div className="flex flex-col h-[calc(100vh-var(--header-height)-4rem)]">
                 {/* Header */}
-                <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center gap-3">
+                <div className="flex items-center justify-between mb-8">
+                    <div className="flex items-center gap-4">
                         <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[var(--secondary-blue)] to-[var(--primary-navy)] flex items-center justify-center shadow-lg">
                             <Bot className="w-7 h-7 text-white" />
                         </div>
@@ -210,7 +210,7 @@ export default function AskVIAPage() {
                             <h1 className="text-2xl font-heading text-[var(--primary-navy)]">
                                 Ask VIA
                             </h1>
-                            <p className="text-sm text-gray-500">
+                            <p className="text-sm text-gray-500 mt-1">
                                 Virtual Immigration Assistant - Your 24/7 visa guide
                             </p>
                         </div>

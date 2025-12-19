@@ -145,12 +145,12 @@ export default function AdjudicatorPage() {
     return (
         <MainLayout>
             {/* Page Header */}
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center justify-between mb-8">
                 <div>
                     <h1 className="text-2xl font-heading text-[var(--primary-navy)]">
                         AI Adjudicator
                     </h1>
-                    <p className="text-gray-500 text-sm mt-1">
+                    <p className="text-gray-500 text-sm mt-2">
                         Real-time petition analysis and adjudication
                     </p>
                 </div>
@@ -163,7 +163,7 @@ export default function AdjudicatorPage() {
             </div>
 
             {/* Active Case Banner */}
-            <Card className="mb-6 bg-[var(--cream-white)]">
+            <Card className="mb-8 bg-[var(--cream-white)]">
                 <CardBody className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
                         <div className="p-3 bg-white rounded-lg shadow-sm">

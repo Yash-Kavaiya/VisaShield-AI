@@ -391,12 +391,12 @@ h6 {
 }
 
 .card-header {
-  padding: 1.25rem 1.5rem;
+  padding: 1rem 1.5rem;
   border-bottom: 1px solid var(--gray-200);
 }
 
 .card-body {
-  padding: 1.5rem;
+  padding: 1.25rem 1.5rem;
 }
 
 .card-footer {
@@ -536,7 +536,7 @@ h6 {
    ======================================== */
 
 .metric-card {
-  padding: 1.5rem;
+  padding: 1.25rem 1.5rem;
   background: var(--white);
   border-radius: var(--radius-lg);
   border: 1px solid var(--gray-200);
@@ -545,15 +545,15 @@ h6 {
 
 .metric-card:hover {
   box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .metric-value {
-  font-size: 2.25rem;
+  font-size: 2rem;
   font-weight: 700;
   font-family: 'Merriweather', serif;
   color: var(--primary-navy);
-  line-height: 1;
+  line-height: 1.1;
 }
 
 .metric-label {

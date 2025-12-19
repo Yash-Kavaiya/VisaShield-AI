@@ -122,12 +122,12 @@ export default function AnalyticsPage() {
     return (
         <MainLayout>
             {/* Page Header */}
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
                 <div>
                     <h1 className="text-2xl font-heading text-[var(--primary-navy)]">
                         Analytics Dashboard
                     </h1>
-                    <p className="text-gray-500 text-sm mt-1">
+                    <p className="text-gray-500 text-sm mt-2">
                         Performance metrics and observability insights
                     </p>
                 </div>
@@ -153,7 +153,7 @@ export default function AnalyticsPage() {
             </div>
 
             {/* Top Metrics Bar */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
                 <MetricCard
                     title="Total Processed"
                     value="1,326"
